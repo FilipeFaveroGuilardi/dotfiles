@@ -1,0 +1,16 @@
+shell = "sh -c '{}'"
+
+[[items]]
+name = "tinted-shell"
+path = "https://github.com/tinted-theming/tinted-shell"
+themes-dir = "scripts"
+hook = ". %f"
+supported-systems = ["base16"]
+
+
+[[items]]
+path = "HOME/.config/sway/tinted-theming/"
+name = "base16-sway"
+themes-dir = "themes"
+hook = "cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/sway/colorscheme && swaymsg reload"
+

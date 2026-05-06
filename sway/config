@@ -15,14 +15,14 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty zsh
+set $term kitty -o allow_remote_control=yes
 # Your preferred application launcher
 set $menu wmenu-run
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg ./wallpaper/wallpaperfoda.jpg fill
+output * bg ./wallpaper/wpp1.jpg fill
 #
 # Example configuration:
 #
@@ -55,7 +55,7 @@ output * bg ./wallpaper/wallpaperfoda.jpg fill
 #   }
 #
    input type:keyboard {
-       xkb_layout "br"
+       xkb_layout "eu"
    }
 #
 # You can also configure each device individually.

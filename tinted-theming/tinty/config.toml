@@ -7,10 +7,18 @@ themes-dir = "scripts"
 hook = ". %f"
 supported-systems = ["base16"]
 
+# [[items]]
+# path = "https://github.com/tinted-theming/tinted-terminal"
+# name = "tinted-terminal"
+# themes-dir = "themes/kitty"
+# hook = "[ -n \"$KITTY_PID\" ] && kill -USR1 \"$KITTY_PID\""
+# supported-systems = ["base16", "base24"]
 
 [[items]]
-path = "HOME/.config/sway/tinted-theming/"
+path = "https://github.com/rkubosz/base16-sway"
 name = "base16-sway"
+revision = "master"
 themes-dir = "themes"
 hook = "cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/sway/colorscheme && swaymsg reload"
+
 

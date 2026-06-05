@@ -1,19 +1,19 @@
-## Base16 Gruvbox dark, hard
-# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+## Base16 Chalk
+# Author: Chris Kempson (http://chriskempson.com)
 
-set $base00 #1d2021
-set $base01 #3c3836
-set $base02 #504945
-set $base03 #665c54
-set $base04 #bdae93
-set $base05 #d5c4a1
-set $base06 #ebdbb2
-set $base07 #fbf1c7
-set $base08 #fb4934
-set $base09 #fe8019
-set $base0A #fabd2f
-set $base0B #b8bb26
-set $base0C #8ec07c
-set $base0D #83a598
-set $base0E #d3869b
-set $base0F #d65d0e
+set $base00 #151515
+set $base01 #202020
+set $base02 #303030
+set $base03 #505050
+set $base04 #b0b0b0
+set $base05 #d0d0d0
+set $base06 #e0e0e0
+set $base07 #f5f5f5
+set $base08 #fb9fb1
+set $base09 #eda987
+set $base0A #ddb26f
+set $base0B #acc267
+set $base0C #12cfc0
+set $base0D #6fc2ef
+set $base0E #e1a3ee
+set $base0F #deaf8f

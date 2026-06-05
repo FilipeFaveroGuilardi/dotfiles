@@ -22,7 +22,7 @@ set $menu wmenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg ./wallpaper/wpp1.jpg fill
+output * bg ./wallpaper/wpp3.jpg fill
 #
 # Example configuration:
 #
@@ -219,7 +219,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 
 #
 # Status Bar:
@@ -266,5 +266,10 @@ hide_edge_borders smart
 
 output DVI-D-1 mode 1280x960 pos 1600 0
 output HDMI-A-1 mode 1600x900 pos 0 0
+
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DISPLAY
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
+exec systemctl --user restart xdg-desktop-portal-wlr
+exec systemctl --user restart xdg-desktop-portal
 
 include @sysconfdir@/sway/config.d/*

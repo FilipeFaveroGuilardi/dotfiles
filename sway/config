@@ -15,6 +15,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
+set $tuxedo_script ~/dotfiles/sway/scripts/tuxedo.sh
 set $term kitty -o allow_remote_control=yes
 # Your preferred application launcher
 set $menu wmenu-run
@@ -22,7 +23,7 @@ set $menu wmenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg ./wallpaper/wpp3.jpg fill
+output * bg ./wallpaper/jc.png fill
 #
 # Example configuration:
 #
@@ -73,7 +74,7 @@ output * bg ./wallpaper/wpp3.jpg fill
 
     # Start your launcher
     bindsym $mod+d exec $menu
-
+    bindsym $mod+t exec $tuxedo_script
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -264,12 +265,19 @@ default_floating_border pixel 0
 hide_edge_borders smart
 
 
-output DVI-D-1 mode 1280x960 pos 1600 0
-output HDMI-A-1 mode 1600x900 pos 0 0
+output DVI-D-1 mode 1280x960 pos 0 0
+output HDMI-A-1 mode 1600x900 pos 1280 0
 
+set $XDG_CURRENT_DESKTOP sway
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DISPLAY
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
 exec systemctl --user restart xdg-desktop-portal-wlr
 exec systemctl --user restart xdg-desktop-portal
+
+exec ~/dotfiles/sway/scripts/tuxedo.sh
+
+for_window [app_id="tuxedo"] floating enable, resize set 1280 720, move window to output HDMI
+
 
 include @sysconfdir@/sway/config.d/*
